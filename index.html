@@ -1,133 +1,467 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JWD ALMTR</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>JWD ALMTR | Conferences & Seminars Organizing</title>
 
 <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    color: white;
-    background: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b0b0b;
+  color: #fff;
+  line-height: 1.6;
 }
 
-/* خلفية */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 18px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.72);
+  backdrop-filter: blur(10px);
+  z-index: 999;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+}
+
+.brand-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.brand-subtitle {
+  font-size: 11px;
+  color: #c9a34e;
+  letter-spacing: 1.5px;
+}
+
+nav a {
+  margin-left: 24px;
+  color: #ddd;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #c9a34e;
+}
+
 .hero {
-    background: url('https://images.unsplash.com/photo-1511578314322-379afb476865') center/cover no-repeat;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  min-height: 100vh;
+  padding: 140px 8% 80px;
+  background:
+    linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.9)),
+    url("https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+  display: flex;
+  align-items: center;
 }
 
-/* طبقة تغميق */
-.overlay {
-    background: rgba(0,0,0,0.65);
-    padding: 50px;
-    width: 100%;
+.hero-content {
+  max-width: 850px;
 }
 
-/* لوقو */
-.logo {
-    width: 100px;
-    margin-bottom: 20px;
+.badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid #c9a34e;
+  color: #c9a34e;
+  border-radius: 30px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
 }
 
-/* العنوان */
-h1 {
-    font-size: 42px;
-    letter-spacing: 4px;
+.hero h1 {
+  font-size: 58px;
+  line-height: 1.1;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
 }
 
-.subtitle {
-    color: #ddd;
-    margin-top: 10px;
-    font-size: 18px;
+.hero h2 {
+  font-size: 23px;
+  color: #ddd;
+  font-weight: 400;
+  margin-bottom: 24px;
 }
 
-/* الخدمات */
-.services {
-    margin-top: 30px;
-    font-size: 16px;
+.hero p {
+  max-width: 680px;
+  color: #cfcfcf;
+  font-size: 17px;
+  margin-bottom: 35px;
 }
 
-.services div {
-    margin: 8px 0;
+.buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
-/* زر واتساب */
 .btn {
-    margin-top: 30px;
-    display: inline-block;
-    padding: 12px 25px;
-    background: #c9a34e;
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
+  padding: 14px 26px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
 }
 
-/* معلومات */
-.info {
-    background: #111;
-    padding: 40px 20px;
-    text-align: center;
+.btn-gold {
+  background: #c9a34e;
+  color: #000;
 }
 
-.info p {
-    margin: 8px 0;
-    color: #ccc;
+.btn-outline {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+section {
+  padding: 85px 8%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title span {
+  color: #c9a34e;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.section-title h2 {
+  font-size: 36px;
+  margin-top: 10px;
+}
+
+.about {
+  background: #111;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.about p {
+  color: #ccc;
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+
+.about-card {
+  background: linear-gradient(145deg, #181818, #0d0d0d);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 35px;
+  border-radius: 16px;
+}
+
+.about-card img {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.about-card h3 {
+  color: #c9a34e;
+  margin-bottom: 12px;
+}
+
+.services {
+  background: #0b0b0b;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.service-card {
+  background: #151515;
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 30px;
+  border-radius: 14px;
+  transition: 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: #c9a34e;
+}
+
+.service-card h3 {
+  color: #c9a34e;
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+.service-card p {
+  color: #cfcfcf;
+  font-size: 15px;
+}
+
+.gallery {
+  background: #111;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 14px;
+  filter: brightness(0.82);
+}
+
+.contact {
+  background:
+    linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.92)),
+    url("https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+
+.contact-box {
+  background: rgba(20,20,20,0.92);
+  border: 1px solid rgba(255,255,255,0.09);
+  padding: 35px;
+  border-radius: 16px;
+}
+
+.contact-box h3 {
+  color: #c9a34e;
+  margin-bottom: 18px;
+  font-size: 23px;
+}
+
+.contact-box p {
+  color: #d5d5d5;
+  margin-bottom: 12px;
+}
+
+footer {
+  padding: 30px 8%;
+  background: #050505;
+  text-align: center;
+  color: #999;
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  nav {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .about-grid,
+  .contact-grid,
+  .service-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid img {
+    height: 220px;
+  }
 }
 </style>
-
 </head>
 
 <body>
 
-<!-- الصفحة الرئيسية -->
-<div class="hero">
-    <div class="overlay">
-        
-        <!-- اللوقو -->
-        <img src="https://i.imgur.com/yourlogo.png" class="logo">
-
-        <h1>JWD ALMTR</h1>
-        <div class="subtitle">
-            FOR CONFERENCES & SEMINARS ORGANIZING
-        </div>
-
-        <!-- الخدمات -->
-        <div class="services">
-            <div>• Corporate Event Management</div>
-            <div>• Conferences & Seminars Organization</div>
-            <div>• Wedding & Private Event Planning</div>
-            <div>• Exhibition & Trade Show Setup</div>
-            <div>• Full Event Production & Coordination</div>
-        </div>
-
-        <!-- زر واتساب -->
-        <a href="https://wa.me/971544476629" class="btn">Contact Us on WhatsApp</a>
-
+<header>
+  <div class="brand">
+    <img src="logo.png" alt="JWD ALMTR Logo">
+    <div>
+      <div class="brand-title">JWD ALMTR</div>
+      <div class="brand-subtitle">CONFERENCES & SEMINARS</div>
     </div>
+  </div>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Events</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-content">
+    <div class="badge">Professional Event Management in UAE</div>
+    <h1>JWD ALMTR</h1>
+    <h2>FOR CONFERENCES & SEMINARS ORGANIZING</h2>
+    <p>
+      We provide professional planning and coordination services for conferences,
+      seminars, corporate events, private occasions, exhibitions, and premium gatherings
+      across the United Arab Emirates.
+    </p>
+
+    <div class="buttons">
+      <a class="btn btn-gold" href="https://wa.me/971544476629">Contact on WhatsApp</a>
+      <a class="btn btn-outline" href="mailto:info@jwd-almtr.com">Email Us</a>
+    </div>
+  </div>
 </div>
 
-<!-- معلومات الشركة -->
-<div class="info">
-    <p>📞 Phone: 04 222 1998</p>
-    <p>📱 WhatsApp: +971 54 447 6629</p>
-    <p>📧 info@jwd-almtr.com</p>
-    <p>📧 HR: hr@jwd-almtr.com</p>
+<section class="about" id="about">
+  <div class="section-title">
+    <span>ABOUT COMPANY</span>
+    <h2>Reliable Event Organizing Partner</h2>
+  </div>
 
-    <p>📍 OFFICE NO: 42, Abu Saif Business Center,<br>
-    Qiyada Metro Station, Dubai, UAE</p>
+  <div class="about-grid">
+    <div>
+      <p>
+        JWD ALMTR FOR CONFERENCES & SEMINARS ORGANIZING is a Dubai-based company
+        specializing in professional event planning, conference management, seminar
+        coordination, and business event support.
+      </p>
+      <p>
+        Our objective is to deliver organized, elegant, and efficient event solutions
+        tailored to each client’s requirements, while maintaining high standards of
+        communication, coordination, and execution.
+      </p>
+      <p>
+        We support companies, institutions, and private clients with complete planning
+        assistance, venue coordination, event setup, guest management, and operational
+        arrangements.
+      </p>
+    </div>
 
-    <p>P.O. Box: 21415</p>
+    <div class="about-card">
+      <img src="logo.png" alt="JWD ALMTR Logo">
+      <h3>Company Information</h3>
+      <p><strong>Managing Director:</strong><br>Mr. Mustafa Mohammad Mohammad</p>
+      <p><strong>P.O. Box:</strong> 21415</p>
+      <p><strong>Location:</strong><br>Dubai, United Arab Emirates</p>
+    </div>
+  </div>
+</section>
 
-    <p>Managing Director: Mustafa Mohammad Mohammad</p>
-</div>
+<section class="services" id="services">
+  <div class="section-title">
+    <span>OUR SERVICES</span>
+    <h2>Professional Event Solutions</h2>
+  </div>
+
+  <div class="service-grid">
+    <div class="service-card">
+      <h3>Conferences</h3>
+      <p>Complete planning and coordination for business conferences, official meetings, and professional gatherings.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Seminars</h3>
+      <p>Organizing seminars, training sessions, workshops, registration support, and guest coordination.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Corporate Events</h3>
+      <p>Corporate launches, internal company events, award ceremonies, networking events, and business functions.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Exhibitions</h3>
+      <p>Exhibition setup coordination, booth arrangement, branding support, and event logistics assistance.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Private Events</h3>
+      <p>Planning and managing private celebrations, formal occasions, receptions, and VIP gatherings.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Event Production</h3>
+      <p>Coordination of lighting, sound, decoration, seating, schedules, suppliers, and on-site event execution.</p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="section-title">
+    <span>EVENT STYLE</span>
+    <h2>Elegant & Organized Experiences</h2>
+  </div>
+
+  <div class="gallery-grid">
+    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=900&q=80" alt="Corporate Event">
+    <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=900&q=80" alt="Conference">
+    <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=900&q=80" alt="Event Setup">
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="section-title">
+    <span>CONTACT US</span>
+    <h2>Get in Touch</h2>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-box">
+      <h3>Official Contact</h3>
+      <p><strong>Phone:</strong> 04 222 1998</p>
+      <p><strong>WhatsApp:</strong> +971 54 447 6629</p>
+      <p><strong>Email:</strong> info@jwd-almtr.com</p>
+      <p><strong>HR Email:</strong> hr@jwd-almtr.com</p>
+    </div>
+
+    <div class="contact-box">
+      <h3>Office Address</h3>
+      <p>
+        OFFICE NO: 42, Abu Saif Business Center,<br>
+        Qiyada Metro Station, Dubai, UAE
+      </p>
+      <p><strong>P.O. Box:</strong> 21415</p>
+      <p><strong>Managing Director:</strong><br>Mr. Mustafa Mohammad Mohammad</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 JWD ALMTR FOR CONFERENCES & SEMINARS ORGANIZING. All Rights Reserved.
+</footer>
 
 </body>
 </html>
