@@ -2,54 +2,132 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JWD ALMTR</title>
+
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0a0a0a;
+    font-family: 'Arial', sans-serif;
     color: white;
+    background: #000;
+}
+
+/* خلفية */
+.hero {
+    background: url('https://images.unsplash.com/photo-1511578314322-379afb476865') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
-.container {
-    padding: 100px 20px;
+
+/* طبقة تغميق */
+.overlay {
+    background: rgba(0,0,0,0.65);
+    padding: 50px;
+    width: 100%;
 }
+
+/* لوقو */
+.logo {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+/* العنوان */
 h1 {
-    font-size: 48px;
-    letter-spacing: 5px;
+    font-size: 42px;
+    letter-spacing: 4px;
 }
-p {
-    color: #ccc;
+
+.subtitle {
+    color: #ddd;
+    margin-top: 10px;
     font-size: 18px;
 }
+
+/* الخدمات */
 .services {
-    margin-top: 40px;
+    margin-top: 30px;
+    font-size: 16px;
 }
+
 .services div {
-    margin: 10px;
+    margin: 8px 0;
 }
-.contact {
-    margin-top: 50px;
+
+/* زر واتساب */
+.btn {
+    margin-top: 30px;
+    display: inline-block;
+    padding: 12px 25px;
+    background: #c9a34e;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* معلومات */
+.info {
+    background: #111;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.info p {
+    margin: 8px 0;
+    color: #ccc;
 }
 </style>
+
 </head>
 
 <body>
-<div class="container">
-    <h1>JWD ALMTR</h1>
-    <p>Conferences & Seminars Organizing</p>
 
-    <div class="services">
-        <div>Event Planning</div>
-        <div>Weddings</div>
-        <div>Private Events</div>
-        <div>Corporate Events</div>
-    </div>
+<!-- الصفحة الرئيسية -->
+<div class="hero">
+    <div class="overlay">
+        
+        <!-- اللوقو -->
+        <img src="https://i.imgur.com/yourlogo.png" class="logo">
 
-    <div class="contact">
-        <p>📞 +971 XX XXX XXXX</p>
-        <p>📸 Instagram: @jwdalmtr</p>
+        <h1>JWD ALMTR</h1>
+        <div class="subtitle">
+            FOR CONFERENCES & SEMINARS ORGANIZING
+        </div>
+
+        <!-- الخدمات -->
+        <div class="services">
+            <div>• Corporate Event Management</div>
+            <div>• Conferences & Seminars Organization</div>
+            <div>• Wedding & Private Event Planning</div>
+            <div>• Exhibition & Trade Show Setup</div>
+            <div>• Full Event Production & Coordination</div>
+        </div>
+
+        <!-- زر واتساب -->
+        <a href="https://wa.me/971544476629" class="btn">Contact Us on WhatsApp</a>
+
     </div>
 </div>
+
+<!-- معلومات الشركة -->
+<div class="info">
+    <p>📞 Phone: 04 222 1998</p>
+    <p>📱 WhatsApp: +971 54 447 6629</p>
+    <p>📧 info@jwd-almtr.com</p>
+    <p>📧 HR: hr@jwd-almtr.com</p>
+
+    <p>📍 OFFICE NO: 42, Abu Saif Business Center,<br>
+    Qiyada Metro Station, Dubai, UAE</p>
+
+    <p>P.O. Box: 21415</p>
+
+    <p>Managing Director: Mustafa Mohammad Mohammad</p>
+</div>
+
 </body>
 </html>
