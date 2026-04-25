@@ -1,109 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JWD ALMTR</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #ffffff;
-  color: #111;
-  line-height: 1.6;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
+body{
+font-family:'Inter',sans-serif;
+background:#fbfaf7;
+color:#111;
 }
 
 /* HEADER */
-header {
-  background: rgba(255,255,255,0.9);
-  border-bottom: 1px solid #eee;
+header{
+position:fixed;
+width:100%;
+top:0;
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,0.9);
+backdrop-filter:blur(10px);
+border-bottom:1px solid #eee;
+z-index:999;
 }
 
-nav a {
-  color: #444;
+.brand{display:flex;align-items:center;gap:10px;}
+.brand img{width:50px;}
+.brand-title{font-weight:800;}
+
+nav a{
+margin-left:20px;
+color:#333;
+font-weight:600;
 }
 
-nav a:hover {
-  color: #c9a34e;
+nav a:hover{color:#c9a34e;}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+padding:120px 8%;
+background:
+linear-gradient(to right,#fff 50%,rgba(255,255,255,0.6)),
+url("https://images.unsplash.com/photo-1511578314322-379afb476865") right/cover no-repeat;
 }
 
-/* HERO (نفس الصورة بس أخف) */
-.hero {
-  background:
-    linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.95)),
-    url("https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+.hero h1{
+font-family:'Playfair Display',serif;
+font-size:70px;
+letter-spacing:3px;
 }
 
-.hero h2 {
-  color: #444;
+.hero h2{margin-top:10px;color:#444;}
+
+.hero p{
+margin-top:20px;
+max-width:500px;
+color:#555;
 }
 
-.hero p {
-  color: #555;
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:12px 25px;
+background:#c9a34e;
+color:#fff;
+border-radius:30px;
+font-weight:bold;
 }
 
-/* الأزرار */
-.btn-outline {
-  border: 1px solid #000;
-  color: #000;
+/* SECTION */
+section{padding:80px 8%;}
+
+.title{text-align:center;margin-bottom:40px;}
+.title span{color:#c9a34e;font-size:13px;}
+.title h2{margin-top:10px;font-size:32px;}
+
+/* ABOUT */
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
 }
 
-/* SECTIONS */
-.about {
-  background: #f8f8f8;
-}
-
-.about p {
-  color: #444;
-}
-
-.about-card {
-  background: #ffffff;
-  border: 1px solid #eee;
+.box{
+background:#fff;
+padding:30px;
+border-radius:12px;
+border:1px solid #eee;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
 
 /* SERVICES */
-.services {
-  background: #ffffff;
+.services{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
 }
 
-.service-card {
-  background: #f9f9f9;
-  border: 1px solid #eee;
+.card{
+background:#fff;
+padding:25px;
+border-radius:12px;
+border:1px solid #eee;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
 
-.service-card p {
-  color: #555;
-}
+.card h3{color:#c9a34e;margin-bottom:10px;}
 
 /* GALLERY */
-.gallery {
-  background: #f5f5f5;
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:12px;
 }
 
 /* CONTACT */
-.contact {
-  background:
-    linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.95)),
-    url("https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+.contact{background:#f7f7f7;}
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
 }
 
-.contact-box {
-  background: #ffffff;
-  border: 1px solid #eee;
-}
-
-.contact-box p {
-  color: #444;
+.contact-box{
+background:#fff;
+padding:25px;
+border-radius:12px;
+border:1px solid #eee;
 }
 
 /* FOOTER */
-footer {
-  background: #f0f0f0;
-  color: #666;
+footer{
+text-align:center;
+padding:20px;
+background:#f0f0f0;
+font-size:13px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+.services,.about,.contact-grid,.gallery{
+grid-template-columns:1fr;
+}
 }
 </style>
+</head>
+
+<body>
+
+<header>
+<div class="brand">
+<img src="logo.png">
+<div class="brand-title">JWD ALMTR</div>
+</div>
+
+<nav>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+<div>
+<h1>JWD ALMTR</h1>
+<h2>FOR CONFERENCES & SEMINARS ORGANIZING</h2>
+
+<p>
+Professional event planning company based in Dubai providing conferences,
+seminars, corporate events, and private event management.
+</p>
+
+<a href="https://wa.me/971544476629" class="btn">Contact Us</a>
+</div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+<div class="title">
+<span>ABOUT US</span>
+<h2>Reliable Event Partner</h2>
+</div>
+
+<div class="about">
+<div>
+<p>
+JWD ALMTR is a Dubai-based company specializing in professional
+event organization, conference management, and seminar coordination.
+</p>
+<p>
+We deliver high-quality, organized, and efficient event solutions
+tailored to corporate and private clients.
+</p>
+</div>
+
+<div class="box">
+<p><b>Managing Director:</b><br>Mustafa Mohammad Mohammad</p>
+<p><b>P.O.Box:</b> 21415</p>
+<p><b>Location:</b> Dubai, UAE</p>
+</div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+<div class="title">
+<span>SERVICES</span>
+<h2>Our Services</h2>
+</div>
+
+<div class="services">
+<div class="card"><h3>Conferences</h3><p>Full planning and coordination for conferences.</p></div>
+<div class="card"><h3>Seminars</h3><p>Workshops and training sessions organization.</p></div>
+<div class="card"><h3>Corporate Events</h3><p>Professional corporate events.</p></div>
+<div class="card"><h3>Exhibitions</h3><p>Exhibition coordination and setup.</p></div>
+<div class="card"><h3>Private Events</h3><p>Weddings and private celebrations.</p></div>
+<div class="card"><h3>Event Production</h3><p>Lighting, sound and full execution.</p></div>
+</div>
+</section>
+
+<!-- GALLERY -->
+<section>
+<div class="title">
+<span>EVENT STYLE</span>
+<h2>Elegant Experiences</h2>
+</div>
+
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622">
+<img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678">
+<img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf">
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+<div class="title">
+<span>CONTACT</span>
+<h2>Get in Touch</h2>
+</div>
+
+<div class="contact-grid">
+<div class="contact-box">
+<p><b>Phone:</b> 04 222 1998</p>
+<p><b>WhatsApp:</b> +971 54 447 6629</p>
+<p><b>Email:</b> info@jwd-almtr.com</p>
+<p><b>HR:</b> hr@jwd-almtr.com</p>
+</div>
+
+<div class="contact-box">
+<p>OFFICE NO: 42, Abu Saif Business Center</p>
+<p>Qiyada Metro Station, Dubai</p>
+<p>P.O.Box: 21415</p>
+</div>
+</div>
+</section>
+
+<footer>
+© 2026 JWD ALMTR. All Rights Reserved.
+</footer>
+
+</body>
+</html>
