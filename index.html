@@ -3,7 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JWD ALMTR</title>
+
+<title>JWD ALMTR | Conferences & Seminars Organizing</title>
+
+<meta name="description" content="JWD ALMTR is a Dubai-based company specialized in conferences, seminars, corporate events and event management.">
+<meta name="keywords" content="JWD ALMTR, event planning Dubai, conferences UAE, seminars Dubai">
+<meta name="author" content="JWD ALMTR">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
@@ -14,6 +19,7 @@ body{
 font-family:'Inter',sans-serif;
 background:#fbfaf7;
 color:#111;
+scroll-behavior:smooth;
 }
 
 /* HEADER */
@@ -39,9 +45,12 @@ nav a{
 margin-left:20px;
 color:#333;
 font-weight:600;
+transition:0.3s;
 }
 
-nav a:hover{color:#c9a34e;}
+nav a:hover{
+color:#c9a34e;
+}
 
 /* HERO */
 .hero{
@@ -58,15 +67,11 @@ url("https://images.unsplash.com/photo-1511578314322-379afb476865") right/cover 
 font-family:'Playfair Display',serif;
 font-size:70px;
 letter-spacing:3px;
+animation:fadeUp 1s ease;
 }
 
 .hero h2{margin-top:10px;color:#444;}
-
-.hero p{
-margin-top:20px;
-max-width:500px;
-color:#555;
-}
+.hero p{margin-top:20px;max-width:500px;color:#555;}
 
 .btn{
 display:inline-block;
@@ -76,6 +81,12 @@ background:#c9a34e;
 color:#fff;
 border-radius:30px;
 font-weight:bold;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(201,163,78,0.4);
 }
 
 /* SECTION */
@@ -97,7 +108,12 @@ background:#fff;
 padding:30px;
 border-radius:12px;
 border:1px solid #eee;
-box-shadow:0 10px 30px rgba(0,0,0,0.05);
+transition:0.3s;
+}
+
+.box:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 40px rgba(0,0,0,0.1);
 }
 
 /* SERVICES */
@@ -112,7 +128,12 @@ background:#fff;
 padding:25px;
 border-radius:12px;
 border:1px solid #eee;
-box-shadow:0 10px 30px rgba(0,0,0,0.05);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 50px rgba(201,163,78,0.2);
 }
 
 .card h3{color:#c9a34e;margin-bottom:10px;}
@@ -129,22 +150,26 @@ width:100%;
 height:250px;
 object-fit:cover;
 border-radius:12px;
+transition:0.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
 }
 
 /* CONTACT */
 .contact{background:#f7f7f7;}
-
-.contact-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
-}
 
 .contact-box{
 background:#fff;
 padding:25px;
 border-radius:12px;
 border:1px solid #eee;
+transition:0.3s;
+}
+
+.contact-box:hover{
+transform:translateY(-5px);
 }
 
 /* FOOTER */
@@ -155,9 +180,15 @@ background:#f0f0f0;
 font-size:13px;
 }
 
+/* ANIMATION */
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(30px);}
+to{opacity:1;transform:translateY(0);}
+}
+
 /* MOBILE */
 @media(max-width:900px){
-.services,.about,.contact-grid,.gallery{
+.services,.about,.gallery{
 grid-template-columns:1fr;
 }
 }
@@ -229,26 +260,12 @@ tailored to corporate and private clients.
 </div>
 
 <div class="services">
-<div class="card"><h3>Conferences</h3><p>Full planning and coordination for conferences.</p></div>
-<div class="card"><h3>Seminars</h3><p>Workshops and training sessions organization.</p></div>
+<div class="card"><h3>Conferences</h3><p>Full planning and coordination.</p></div>
+<div class="card"><h3>Seminars</h3><p>Workshops and training sessions.</p></div>
 <div class="card"><h3>Corporate Events</h3><p>Professional corporate events.</p></div>
-<div class="card"><h3>Exhibitions</h3><p>Exhibition coordination and setup.</p></div>
-<div class="card"><h3>Private Events</h3><p>Weddings and private celebrations.</p></div>
-<div class="card"><h3>Event Production</h3><p>Lighting, sound and full execution.</p></div>
-</div>
-</section>
-
-<!-- GALLERY -->
-<section>
-<div class="title">
-<span>EVENT STYLE</span>
-<h2>Elegant Experiences</h2>
-</div>
-
-<div class="gallery">
-<img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622">
-<img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678">
-<img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf">
+<div class="card"><h3>Exhibitions</h3><p>Exhibition setup & management.</p></div>
+<div class="card"><h3>Private Events</h3><p>Weddings & celebrations.</p></div>
+<div class="card"><h3>Event Production</h3><p>Lighting & full execution.</p></div>
 </div>
 </section>
 
@@ -259,19 +276,11 @@ tailored to corporate and private clients.
 <h2>Get in Touch</h2>
 </div>
 
-<div class="contact-grid">
 <div class="contact-box">
 <p><b>Phone:</b> 04 222 1998</p>
 <p><b>WhatsApp:</b> +971 54 447 6629</p>
 <p><b>Email:</b> info@jwd-almtr.com</p>
 <p><b>HR:</b> hr@jwd-almtr.com</p>
-</div>
-
-<div class="contact-box">
-<p>OFFICE NO: 42, Abu Saif Business Center</p>
-<p>Qiyada Metro Station, Dubai</p>
-<p>P.O.Box: 21415</p>
-</div>
 </div>
 </section>
 
